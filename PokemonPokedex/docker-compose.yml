@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  pokedex:
+    build: .
+    container_name: pokemon_pokedex
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app
+    working_dir: /app
+    command: ["python", ".venv/src/pokedex.py"]
+    ports:
+      - "5000:5000"
